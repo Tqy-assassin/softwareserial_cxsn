@@ -1,6 +1,6 @@
 {
     "name": "SoftwareSerial_CXSN",
-    "description": "",
+    "description": "cxsn software serial",
     "dependencies": {
         "core": "*",
         "radio": "*",
