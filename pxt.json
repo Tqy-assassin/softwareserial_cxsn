@@ -3,13 +3,12 @@
     "version": "0.1.0",
     "description": "cxsn software serial",
     "dependencies": {
-        "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "main.ts",
-        "README.md"
+        "README.md",
+        "_locales/zh/softwareserial_cxsn-strings.json"
     ],
     "testFiles": [
         "test.ts"
