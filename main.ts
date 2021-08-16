@@ -1,36 +1,43 @@
 enum SerialPortNo {
-    //% block="端口1"
+    //% block="port1"
     port1 = 0,
-    //% block="端口2"
+    //% block="port2"
     port2 = 1,
-    //% block="端口3"
+    //% block="port3"
     port3 = 2,
-    //% block="端口4"
+    //% block="port4"
     port4 = 3,
-    //% block="端口5"
+    //% block="port5"
     port5 = 4,
-    //% block="端口6"
+    //% block="port6"
     port6 = 5
 }
 
 enum SerialMode{
+    //% block="unused"
     _unused = 0,
-
+    //% block="readonly"
     _readonly = 1 << 0,
-
+    //% block="writeonly"
     _writeonly = 1 << 1,
-
+    //% block="readwrite"
     _readwrite = _readonly | _writeonly
 }
 
 
 namespace serial{
-
-    export function pin_set(pin: SerialPortNo, mode: SerialMode) {
-
+    //% block="set serial %pin, with %mode"
+    export function pin_set(pin: SerialPortNo, mode: SerialMode): void{
+        
+    }
+    //% block="start begin with baudrate %baud"
+    export function begin(baud: Number): void{
+        control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_EVT_ANY, function on_microbit_id_button_a_evt() {
+            
+        })
     }
 
-    export function begin(baud: Number){
+    export function write(values: number[]): void{
 
     }
 }

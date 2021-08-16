@@ -1,3 +1,12 @@
 {
-    
+    "SerialPortNo.port1|block": "端口1",
+    "SerialPortNo.port2|block": "端口2",
+    "SerialPortNo.port3|block": "端口3",
+    "SerialPortNo.port4|block": "端口4",
+    "SerialPortNo.port5|block": "端口5",
+    "SerialPortNo.port6|block": "端口6",
+    "SerialMode._unused|block": "不使用",
+    "SerialMode._readonly|block": "只读",
+    "SerialMode._writeonly|block": "只写",
+    "SerialMode._readwrite|block": "读写"
 }
