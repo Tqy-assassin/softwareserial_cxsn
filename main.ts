@@ -24,20 +24,31 @@ enum SerialMode{
     _readwrite = _readonly | _writeonly
 }
 
-
+//% color="#ff6600" weight=103 icon="\uf085"
 namespace serial{
-    //% block="set serial %pin, with %mode"
-    export function pin_set(pin: SerialPortNo, mode: SerialMode): void{
+    let Pins = [ 
+        [EventBusSource.MICROBIT_ID_IO_P0, EventBusSource.MICROBIT_ID_IO_P3, EventBusSource.MICROBIT_ID_IO_P4],
+        [EventBusSource.MICROBIT_ID_IO_P1, EventBusSource.MICROBIT_ID_IO_P5, EventBusSource.MICROBIT_ID_IO_P6],
+        [EventBusSource.MICROBIT_ID_IO_P2, EventBusSource.MICROBIT_ID_IO_P7, EventBusSource.MICROBIT_ID_IO_P8],
+        [EventBusSource.MICROBIT_ID_IO_P9, EventBusSource.MICROBIT_ID_IO_P10, EventBusSource.MICROBIT_ID_IO_P11],
+        [EventBusSource.MICROBIT_ID_IO_P13, EventBusSource.MICROBIT_ID_IO_P14, EventBusSource.MICROBIT_ID_IO_P15],
+        [EventBusSource.MICROBIT_ID_IO_P16, EventBusSource.MICROBIT_ID_IO_P19, EventBusSource.MICROBIT_ID_IO_P20]];
+    let baud = 9600;
+
+    //% block="set serial %port with %mode"
+    export function pin_set(port: SerialPortNo, mode: SerialMode): void{
         
     }
-    //% block="start begin with baudrate %baud"
-    export function begin(baud: Number): void{
-        control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_EVT_ANY, function on_microbit_id_button_a_evt() {
-            
+
+    //% block="start %port as serial with baudrate %baud"
+    export function begin(port: SerialPortNo, baud: Number): void{
+        
+        control.onEvent(Pins[port][0], EventBusValue.MICROBIT_PIN_EVT_RISE, function () {
+
         })
     }
-
-    export function write(values: number[]): void{
+    //% block="serial %port write %values"
+    export function write(port: SerialPortNo, values: number[]): void{
 
     }
 }
