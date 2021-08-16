@@ -6,7 +6,6 @@
         "core": "*"
     },
     "files": [
-        "main.ts",
         "README.md",
         "_locales/zh/softwareserial_cxsn-strings.json"
     ],
