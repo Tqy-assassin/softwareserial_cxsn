@@ -1,4 +1,6 @@
 {
+    "softwareserial.pin_set|block": "设置%port为串口|%mode模式",
+    "softwareserial.begin|block": "启动%port的串口|波特率为%baud",
     "SerialPortNo.port1|block": "端口1",
     "SerialPortNo.port2|block": "端口2",
     "SerialPortNo.port3|block": "端口3",
@@ -8,5 +10,8 @@
     "SerialMode._unused|block": "不使用",
     "SerialMode._readonly|block": "只读",
     "SerialMode._writeonly|block": "只写",
-    "SerialMode._readwrite|block": "读写"
+    "SerialMode._readwrite|block": "读写",
+    "{id:category}Softwareserial": "串口模块",
+    "{id:group}Functions": "运行",
+    "{id:group}Settings": "设置"
 }

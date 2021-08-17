@@ -2,23 +2,34 @@
 #define __SWSERIAL_H__
 #include "pxt.h"
 
+enum SerialPortNo {
+    //% block="port1"
+    port1 = 0,
+    //% block="port2"
+    port2 = 1,
+    //% block="port3"
+    port3 = 2,
+    //% block="port4"
+    port4 = 3,
+    //% block="port5"
+    port5 = 4,
+    //% block="port6"
+    port6 = 5
+}
+
+enum SerialMode {
+    //% block="unused"
+    _unused = 0,
+    //% block="readonly"
+    _readonly = 1,
+    //% block="writeonly"
+    _writeonly = 2,
+    //% block="readwrite"
+    _readwrite = 3
+}
 class SWserial
 {
 public:
-    enum SerialPortNo {
-        port1 = 0,
-        port2 = 1,
-        port3 = 2,
-        port4 = 3,
-        port5 = 4,
-        port6 = 5
-    }
-    enum SerialMode {
-        _unused = 0,
-        _readonly = 1,
-        _writeonly = 2,
-        _readwrite = 3
-    }
     SWserial(uint8_t rx, uint8_t tx, SerialMode mode);
     void setMode(SerialMode mode);
     void begin(int baud);
