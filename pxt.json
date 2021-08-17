@@ -9,7 +9,6 @@
         "softwareserial.ts",
         "softwareserial.cpp",
         "README.md",
-        "_locales/zh/softwareserial_cxsn-strings.json",
         "shims.d.ts",
         "enums.d.ts",
         "core/SWserial.cpp",
