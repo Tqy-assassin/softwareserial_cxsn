@@ -9,11 +9,12 @@
         "softwareserial.ts",
         "softwareserial.cpp",
         "README.md",
-        "_locales/zh/softwareserial_cxsn-strings.json",
         "shims.d.ts",
         "enums.d.ts",
         "core/SWserial.cpp",
-        "core/SWserial.h"
+        "core/SWserial.h",
+        "_locales/zh/softwareserial-jsdoc-strings.json",
+        "_locales/zh/softwareserial-strings.json"
     ],
     "testFiles": [
         "test.ts"
