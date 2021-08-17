@@ -1,4 +1,5 @@
 #include "pxt.h"
+#include "core/SWserial.h"
 
 enum SerialPortNo {
     //% block="port1"
@@ -15,7 +16,7 @@ enum SerialPortNo {
     port6 = 5
 }
 
-enum SerialMode{
+enum SerialMode {
     //% block="unused"
     _unused = 0,
     //% block="readonly"
@@ -26,8 +27,9 @@ enum SerialMode{
     _readwrite = 3
 }
 
+SWserial *serial[6] = {nullptr};
 
-int Pins_id = {
+const int Pins_id = {
     [uBit.EventBusSource.MICROBIT_ID_IO_P0, uBit.EventBusSource.MICROBIT_ID_IO_P3, uBit.EventBusSource.MICROBIT_ID_IO_P4],
     [uBit.EventBusSource.MICROBIT_ID_IO_P1, uBit.EventBusSource.MICROBIT_ID_IO_P5, uBit.EventBusSource.MICROBIT_ID_IO_P6],
     [uBit.EventBusSource.MICROBIT_ID_IO_P2, uBit.EventBusSource.MICROBIT_ID_IO_P7, uBit.EventBusSource.MICROBIT_ID_IO_P8],
@@ -39,20 +41,34 @@ int Pins_id = {
 namespace softwareserial{
     //% block="set serial %port with %mode"
     void pin_set(SerialPortNo port, SerialMode mode){
-        
+        if(serial[port] == nullptr){
+            serial[port] = new SWserial(Pins_id[port][0], Pins_id[port][2], mode);
+        }else{
+            serial[port].setMode(mode);
+        }
     }
 
     //% block="start %port as serial with baudrate %baud"
     void begin(SerialPortNo port, int baud){
-        uBit.control.onEvent(Pins_id[port][0], EventBusValue.MICROBIT_PIN_EVT_RISE, function () {
-
-        })
+        if(serial[port] == nullptr){
+            serial[port].begin(baud);
+        }
     }
+
     //% block="serial %port write %values"
     void write(SerialPortNo port, char* values){
-
+        if(serial[port] == nullptr){
+            serial[port].write(values);
+        }
     }
 
-
+    //% block="serial %port read"
+    char write(SerialPortNo port){
+        char ret = 0;
+        if(serial[port] == nullptr){
+            ret = serial[port].read();
+        }
+        return ret;
+    }
 }
 
