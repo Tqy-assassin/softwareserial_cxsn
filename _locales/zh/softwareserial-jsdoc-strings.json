@@ -1,0 +1,7 @@
+{
+    "softwareserial": "晨旭少年——串口模块",
+    "softwareserial.pin_set": "设置端口为串口同学通讯模式",
+    "softwareserial.begin": "启动端口的串口",
+    "SerialPortNo": "端口编号",
+    "SerialMode": "串口使用模式"
+}
